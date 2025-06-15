@@ -2,36 +2,82 @@ import { HeaderItems } from "@/types/type";
 import Link from "next/link";
 import CustomButton from "./CustomButton";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 const SideNav = ({ navLinks }: { navLinks: HeaderItems[] }) => {
-  const router = useRouter()
-  return (
-    <div className=" lg:hidden  bg-white dark:bg-[#0a0a0a] h-[100%] flex flex-col items-center px-5 fixed w-full top-0 pt-[5rem] ">
-      <div className=" flex flex-col w-full">
-        <div className="font-semibold">
-          <div className=" sm:flex-row flex lg:mb-0 mb-[5rem]  flex-col gap-4 items-center h-[40px]   ">
-            <CustomButton
-              title="Login"
-              styles=" border-[1px] lg:border-[2px] border-initialPrimary-500 flex items-center justify-center w-full h-[40px] lg:w-[120px] hover:opacity-80 text-initialPrimary-500 py-2 rounded-md lg:rounded-full  px-6 "
-              action={() => router.push("/auth/login")}
-            />
+  const router = useRouter();
 
-            <CustomButton
-              title="Sign Up"
-              styles=" border-initialPrimary-500 border-[2px] w-full flex items-center rounded-md h-[40px] justify-center lg:w-[120px] hover:opacity-80  bg-initialPrimary-500 text-white py-2 lg:rounded-full  px-6 "
-              action={() => router.push("/auth/sign-up")}
-            />
+  return (
+    <div className="fixed inset-0 bg-white dark:bg-black">
+      <motion.div
+        initial={{ x: "100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "100%" }}
+        transition={{ type: "spring", damping: 20 }}
+        style={{
+          position: "fixed",
+          top: 0,
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "4rem 0.75rem 0",
+          overflowY: "auto",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            maxWidth: "28rem",
+            margin: "0 auto",
+          }}
+        >
+          <div style={{ fontWeight: 600 }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.75rem",
+                alignItems: "center",
+              }}
+            >
+              <CustomButton
+                title="Login"
+                styles="border-[1px] border-initialPrimary-500 flex items-center justify-center w-full h-[36px] sm:h-[40px] hover:opacity-80 text-initialPrimary-500 py-2 rounded-md px-4 sm:px-6 text-xs sm:text-sm transition-all"
+                action={() => router.push("/auth/login")}
+              />
+
+              <CustomButton
+                title="Sign Up"
+                styles="border-initialPrimary-500 border-[2px] w-full flex items-center rounded-md h-[36px] sm:h-[40px] justify-center hover:opacity-80 bg-initialPrimary-500 text-white py-2 px-4 sm:px-6 text-xs sm:text-sm transition-all"
+                action={() => router.push("/auth/sign-up")}
+              />
+            </div>
+          </div>
+
+          <div className="mt-6 sm:mt-8 flex flex-col gap-4 sm:gap-6">
+            {navLinks.map((items, index) => (
+              <motion.div
+                key={items.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                style={{ display: "flex", flexDirection: "column" }}
+              >
+                <Link
+                  href={items.link}
+                  className="text-sm sm:text-base hover:text-initialPrimary-500 transition-colors py-1.5 sm:py-2"
+                >
+                  {items.name}
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
-
-        <div className="mt-6 flex flex-col opacity-80 gap-[2rem]">
-          {navLinks.map(items => (
-            <div key={items.name} className="  flex flex-col gap-[5rem] ">
-              <Link href={items.link}>{items.name}</Link>
-            </div>
-          ))}
-        </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

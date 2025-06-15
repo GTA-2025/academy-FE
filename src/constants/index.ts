@@ -2,20 +2,20 @@ import { HeaderItems } from "@/types/type";
 
 export const navLinks: HeaderItems[] = [
   {
-    name: "Pricing",
-    link: "/pricing",
-  },
-  {
-    name: "Platform",
-    link: "/platform",
-  },
-  {
-    name: "Enterprise",
-    link: "/enterprise",
+    name: "Home",
+    link: "/",
   },
   {
     name: "Features",
-    link: "/features",
+    link: "/#features",
+  },
+  {
+    name: "Courses",
+    link: "/#courses",
+  },
+  {
+    name: "Testimonials",
+    link: "/#testimonials",
   },
   {
     name: "Blog",
@@ -23,7 +23,7 @@ export const navLinks: HeaderItems[] = [
   },
 ];
 
-export const webName: string[] = ["Gabriel", "Trading", "Academy"];
+export const webName: string[] = ["Gainset", "Trading", "Academy"];
 
 import logo from "../../public/assets/logo.jpg";
 export const images = {

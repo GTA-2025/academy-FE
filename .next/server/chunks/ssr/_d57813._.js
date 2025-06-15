@@ -106,7 +106,7 @@ const navLinks = [
     }
 ];
 const webName = [
-    "Gabriel",
+    "Gainset",
     "Trading",
     "Academy"
 ];
