@@ -1,0 +1,16 @@
+{
+  "app": {
+    "[project]/src/app/page": [
+      "static/media/Lato_Regular-s.p.2f1db74b.ttf"
+    ],
+    "[project]/src/app/auth/login/page": [
+      "static/media/Lato_Regular-s.p.2f1db74b.ttf"
+    ],
+    "[project]/src/app/auth/sign-up/page": [
+      "static/media/Lato_Regular-s.p.2f1db74b.ttf"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}
