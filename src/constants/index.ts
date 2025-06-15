@@ -2,20 +2,20 @@ import { HeaderItems } from "@/types/type";
 
 export const navLinks: HeaderItems[] = [
   {
-    name: "Pricing",
-    link: "/pricing",
-  },
-  {
-    name: "Platform",
-    link: "/platform",
-  },
-  {
-    name: "Enterprise",
-    link: "/enterprise",
+    name: "Home",
+    link: "/",
   },
   {
     name: "Features",
-    link: "/features",
+    link: "/#features",
+  },
+  {
+    name: "Courses",
+    link: "/#courses",
+  },
+  {
+    name: "Testimonials",
+    link: "/#testimonials",
   },
   {
     name: "Blog",

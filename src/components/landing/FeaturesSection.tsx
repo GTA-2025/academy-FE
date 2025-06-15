@@ -30,7 +30,10 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className=" lg:px-[5rem] px-5 py-20 bg-gray-50 dark:bg-gray-900">
+    <section
+      id="features"
+      className=" lg:px-[5rem] px-5 py-20 bg-gray-50 dark:bg-gray-900"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Why Choose Our Academy?</h2>

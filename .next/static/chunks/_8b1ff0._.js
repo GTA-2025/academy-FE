@@ -410,20 +410,20 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$assets$2f$logo$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$assets$2f$logo$2e$jpg__$5b$app$2d$client$5d$__$28$static$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_import__('[project]/public/assets/logo.jpg.mjs { IMAGE => "[project]/public/assets/logo.jpg [app-client] (static)" } [app-client] (structured image object, ecmascript)');
 const navLinks = [
     {
-        name: "Pricing",
-        link: "/pricing"
-    },
-    {
-        name: "Platform",
-        link: "/platform"
-    },
-    {
-        name: "Enterprise",
-        link: "/enterprise"
+        name: "Home",
+        link: "/"
     },
     {
         name: "Features",
-        link: "/features"
+        link: "/#features"
+    },
+    {
+        name: "Courses",
+        link: "/#courses"
+    },
+    {
+        name: "Testimonials",
+        link: "/#testimonials"
     },
     {
         name: "Blog",
@@ -483,7 +483,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$
 ;
 const Card = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__.forwardRef(_c = ({ className, ...props }, ref)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         ref: ref,
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("rounded-xl border bg-card text-card-foreground shadow", className),
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("rounded-lg border bg-card text-card-foreground shadow", className),
         ...props
     }, void 0, false, {
         fileName: "[project]/src/components/ui/card.tsx",
@@ -872,7 +872,7 @@ const MarketOverview = ()=>{
     _s();
     const [selectedPair, setSelectedPair] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(majorPairs[0]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full lg:h-[95%] xl:h-[100%] h-full rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] p-3 sm:p-4 md:p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 shadow-xl overflow-hidden",
+        className: "w-full lg:h-[98%] xl:h-[100%] h-full rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] p-3 sm:p-4 md:p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 shadow-xl overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6",
@@ -1337,7 +1337,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$MarketO
 ;
 const HeroSection = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "lg:px-[2rem] xl:px-[5rem] font-latoRegular py-8 md:py-12 lg:py-16 xl:py-[3rem] flex-col lg:flex-row gap-8 md:gap-12 lg:gap-[3rem] flex justify-between max-w-[1920px] mx-auto",
+        className: "lg:px-[2rem] xl:px-[5rem] font-latoRegular py-8 md:py-12 lg:py-[3rem] xl:py-[5rem] flex-col lg:flex-row gap-8 md:gap-12 lg:gap-[3rem] flex justify-between max-w-[1920px] mx-auto",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "w-full px-4 sm:px-5 md:px-6 lg:px-8 xl:w-[50%]",
@@ -1374,7 +1374,7 @@ const HeroSection = ()=>{
                             className: "mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-[3rem] font-bold dark:text-white",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                    className: "text-[40px] sm:text-[5rem] md:text-[6rem] lg:text-[3rem] xl:text-[4.5rem]  leading-[1.2] text-shadow-light",
+                                    className: "text-[40px] sm:text-[5rem] md:text-[6rem] lg:text-[3.6rem] xl:text-[4.5rem]  leading-[1.2] text-shadow-light",
                                     children: [
                                         "All you need to know to be a profitable",
                                         " ",
@@ -1393,7 +1393,7 @@ const HeroSection = ()=>{
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "font-light mt-4 sm:mt-5 md:mt-6 lg:mt-8 text-base sm:text-lg md:text-xl lg:text-xl text-justify tracking-wider max-w-[90%] lg:max-w-full",
+                                    className: "font-light mt-4 sm:mt-5 md:mt-6 lg:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-xl text-justify tracking-wider max-w-[90%] lg:max-w-full",
                                     children: [
                                         "Join ",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1558,6 +1558,7 @@ const features = [
 ];
 const FeaturesSection = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        id: "features",
         className: " lg:px-[5rem] px-5 py-20 bg-gray-50 dark:bg-gray-900",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container mx-auto px-4",
@@ -1570,7 +1571,7 @@ const FeaturesSection = ()=>{
                             children: "Why Choose Our Academy?"
                         }, void 0, false, {
                             fileName: "[project]/src/components/landing/FeaturesSection.tsx",
-                            lineNumber: 36,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1578,13 +1579,13 @@ const FeaturesSection = ()=>{
                             children: "We provide comprehensive training and support to help you become a successful forex trader."
                         }, void 0, false, {
                             fileName: "[project]/src/components/landing/FeaturesSection.tsx",
-                            lineNumber: 37,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/landing/FeaturesSection.tsx",
-                    lineNumber: 35,
+                    lineNumber: 38,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1598,7 +1599,7 @@ const FeaturesSection = ()=>{
                                         className: "w-12 h-12 text-blue-600 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/landing/FeaturesSection.tsx",
-                                        lineNumber: 49,
+                                        lineNumber: 52,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1606,7 +1607,7 @@ const FeaturesSection = ()=>{
                                         children: feature.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/landing/FeaturesSection.tsx",
-                                        lineNumber: 50,
+                                        lineNumber: 53,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1614,29 +1615,29 @@ const FeaturesSection = ()=>{
                                         children: feature.description
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/landing/FeaturesSection.tsx",
-                                        lineNumber: 51,
+                                        lineNumber: 54,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/landing/FeaturesSection.tsx",
-                                lineNumber: 48,
+                                lineNumber: 51,
                                 columnNumber: 15
                             }, this)
                         }, index, false, {
                             fileName: "[project]/src/components/landing/FeaturesSection.tsx",
-                            lineNumber: 44,
+                            lineNumber: 47,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/landing/FeaturesSection.tsx",
-                    lineNumber: 42,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/landing/FeaturesSection.tsx",
-            lineNumber: 34,
+            lineNumber: 37,
             columnNumber: 7
         }, this)
     }, void 0, false, {
@@ -1710,6 +1711,7 @@ const courses = [
 ];
 const CoursesSection = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        id: "courses",
         className: "py-20",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container mx-auto px-4",
@@ -1923,6 +1925,7 @@ const testimonials = [
 ];
 const TestimonialsSection = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        id: "testimonials",
         className: "py-20 bg-gray-50 dark:bg-gray-900",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container mx-auto px-4",
@@ -3874,7 +3877,7 @@ const page = ()=>{
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "w-full  pt-12  sm:pt- flex flex-col items-center",
+                className: "w-full  pt-12 lg:pt-0  sm:pt- flex flex-col items-center",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$landing$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
                     lineNumber: 18,

@@ -5,7 +5,7 @@ import MarketOverview from "../MarketOverview";
 
 const HeroSection = () => {
   return (
-    <section className="lg:px-[2rem] xl:px-[5rem] font-latoRegular py-8 md:py-12 lg:py-16 xl:py-[3rem] flex-col lg:flex-row gap-8 md:gap-12 lg:gap-[3rem] flex justify-between max-w-[1920px] mx-auto">
+    <section className="lg:px-[2rem] xl:px-[5rem] font-latoRegular py-8 md:py-12 lg:py-[3rem] xl:py-[5rem] flex-col lg:flex-row gap-8 md:gap-12 lg:gap-[3rem] flex justify-between max-w-[1920px] mx-auto">
       {/* First Phase */}
       <section className="w-full px-4 sm:px-5 md:px-6 lg:px-8 xl:w-[50%]">
         <div className="p-1 rounded-full text-[12px] sm:text-[14px] w-[180px] sm:w-[200px] dark:border-slate-600 border-slate-400 border">
@@ -19,14 +19,14 @@ const HeroSection = () => {
 
         <div className="w-full flex">
           <div className="mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-[3rem] font-bold dark:text-white">
-            <h1 className="text-[40px] sm:text-[5rem] md:text-[6rem] lg:text-[3rem] xl:text-[4.5rem]  leading-[1.2] text-shadow-light">
+            <h1 className="text-[40px] sm:text-[5rem] md:text-[6rem] lg:text-[3.6rem] xl:text-[4.5rem]  leading-[1.2] text-shadow-light">
               All you need to know to be a profitable{" "}
               <span className="outline-text text-thick-shadow dark:text-thick-shadow-dark">
                 trader.
               </span>
             </h1>
 
-            <p className="font-light mt-4 sm:mt-5 md:mt-6 lg:mt-8 text-base sm:text-lg md:text-xl lg:text-xl text-justify tracking-wider max-w-[90%] lg:max-w-full">
+            <p className="font-light mt-4 sm:mt-5 md:mt-6 lg:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-xl text-justify tracking-wider max-w-[90%] lg:max-w-full">
               Join <span className="font-bold">{webName[0]}</span>
               <span className="font-bold"> {webName[1]}</span>
               <span className="font-bold"> {webName[2]} </span>
