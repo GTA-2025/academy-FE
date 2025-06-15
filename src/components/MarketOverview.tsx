@@ -110,7 +110,7 @@ const MarketOverview = () => {
   const [selectedPair, setSelectedPair] = useState(majorPairs[0]);
 
   return (
-    <div className="w-full lg:h-[95%] xl:h-[100%] h-full rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] p-3 sm:p-4 md:p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 shadow-xl overflow-hidden">
+    <div className="w-full lg:h-[98%] xl:h-[100%] h-full rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] p-3 sm:p-4 md:p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 shadow-xl overflow-hidden">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
         <h2 className="text-base sm:text-lg md:text-2xl font-bold">
           Market Overview
