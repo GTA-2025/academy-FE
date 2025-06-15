@@ -23,7 +23,7 @@ export const navLinks: HeaderItems[] = [
   },
 ];
 
-export const webName: string[] = ["Gabriel", "Trading", "Academy"];
+export const webName: string[] = ["Gainset", "Trading", "Academy"];
 
 import logo from "../../public/assets/logo.jpg";
 export const images = {
