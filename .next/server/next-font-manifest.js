@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\n  \"app\": {\n    \"[project]/src/app/blog/page\": [\n      \"static/media/Lato_Regular-s.p.2f1db74b.ttf\"\n    ],\n    \"[project]/src/app/page\": [\n      \"static/media/Lato_Regular-s.p.2f1db74b.ttf\"\n    ]\n  },\n  \"appUsingSizeAdjust\": true,\n  \"pages\": {},\n  \"pagesUsingSizeAdjust\": false\n}"
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/apple/Desktop/DEV/Product/GTA/academy-FE/src/app/layout":["static/media/c44e96b6632c6d83-s.p.ttf"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

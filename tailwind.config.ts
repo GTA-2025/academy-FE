@@ -1,5 +1,7 @@
 import tailwindcssAnimate from "tailwindcss-animate";
 import daisyui from "daisyui";
+import type { Config } from "tailwindcss";
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -11,14 +13,8 @@ const config = {
   prefix: "",
   theme: {
     container: {
-      center: "true",
-      padding: {
-        DEFAULT: "1rem",
-        sm: "1.5rem",
-        lg: "2rem",
-        xl: "4rem",
-        "2xl": "6rem",
-      },
+      center: true,
+      padding: "2rem",
       screens: {
         "2xl": "1400px",
       },
@@ -41,12 +37,40 @@ const config = {
             opacity: "1",
           },
         },
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
       },
       animation: {
         slideDown: "slideDown 0.3s ease-out",
         fadeIn: "fadeIn 0.3s ease-out",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       colors: {
+        brand: {
+          primary: "#2563eb", // blue-600
+          white: "#ffffff",
+          black: "#000000",
+          dark: "#0a0a0a",
+          gray: {
+            light: "#f3f4f6", // gray-100
+            DEFAULT: "#6b7280", // gray-500
+          },
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -56,16 +80,7 @@ const config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        fontFamily: {
-          latoRegular: ["var(--font-lato-regular)", "sans-serif"],
-          latoBold: ["var(--font-lato-bold)", "sans-serif"],
-          latoBlack: ["var(--font-lato-black)", "sans-serif"],
-          latoHeavy: ["var(--font-lato-heavy)", "sans-serif"],
-          latoLight: ["var(--font-lato-light)", "sans-serif"],
-          latoMedium: ["var(--font-lato-medium)", "sans-serif"],
-          latoSemibold: ["var(--font-lato-semibold)", "sans-serif"],
-          latoThin: ["var(--font-lato-thin)", "sans-serif"],
-        },
+
         initialPrimary: {
           "100": "#F5F8FF",
           "200": "#EBF4FF",
@@ -201,6 +216,8 @@ const config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        btn: "9999px",
+        "3xl": "1.5rem",
       },
     },
     typography: {
@@ -230,33 +247,6 @@ const config = {
         },
       },
     },
-    borderRadius: {
-      lg: "var(--radius)",
-      md: "calc(var(--radius) - 2px)",
-      sm: "calc(var(--radius) - 4px)",
-    },
-    keyframes: {
-      "accordion-down": {
-        from: {
-          height: "0",
-        },
-        to: {
-          height: "var(--radix-accordion-content-height)",
-        },
-      },
-      "accordion-up": {
-        from: {
-          height: "var(--radix-accordion-content-height)",
-        },
-        to: {
-          height: "0",
-        },
-      },
-    },
-    animation: {
-      "accordion-down": "accordion-down 0.2s ease-out",
-      "accordion-up": "accordion-up 0.2s ease-out",
-    },
   },
   plugins: [
     function ({ addUtilities }: { addUtilities: any }) {
@@ -275,7 +265,6 @@ const config = {
       addUtilities(newUtilities, ["responsive", "hover"]);
     },
     tailwindcssAnimate,
-
     daisyui,
   ],
   daisyui: {
@@ -286,6 +275,6 @@ const config = {
     rtl: false, // Disables RTL support if not needed
     prefix: "", // No prefix for DaisyUI classes
   },
-};
+} satisfies Config;
 
 export default config;

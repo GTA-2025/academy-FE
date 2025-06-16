@@ -1,13 +1,1 @@
-{
-  "app": {
-    "[project]/src/app/blog/page": [
-      "static/media/Lato_Regular-s.p.2f1db74b.ttf"
-    ],
-    "[project]/src/app/page": [
-      "static/media/Lato_Regular-s.p.2f1db74b.ttf"
-    ]
-  },
-  "appUsingSizeAdjust": true,
-  "pages": {},
-  "pagesUsingSizeAdjust": false
-}
+{"pages":{},"app":{"/Users/apple/Desktop/DEV/Product/GTA/academy-FE/src/app/layout":["static/media/c44e96b6632c6d83-s.p.ttf"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}

@@ -128,7 +128,7 @@ const MarketOverview = () => {
             variant={selectedPair.pair === pair.pair ? "default" : "outline"}
             className={`font-light rounded-full items-center gap-2 min-w-[80px] sm:min-w-[90px] md:min-w-[120px] whitespace-nowrap ${
               selectedPair.pair === pair.pair
-                ? "bg-blue-600 text-white hover:bg-blue-600"
+                ? "bg-brand-primary text-brand-white hover:bg-brand-primary"
                 : "hover:bg-blue-50 dark:hover:bg-blue-900/20"
             }`}
             onClick={() => setSelectedPair(pair)}
@@ -248,7 +248,7 @@ const MarketOverview = () => {
           <div className="flex w-full flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 text-xs sm:text-sm">
             <div className="flex items-center gap-3 sm:gap-4">
               <div className="flex items-center gap-1 sm:gap-2">
-                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-blue-500"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-brand-primary"></div>
                 <span className="text-muted-foreground">Price</span>
               </div>
               <div className="flex items-center gap-1 sm:gap-2">

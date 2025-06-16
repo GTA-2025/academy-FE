@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={`${lato.variable} bg-white dark:bg-[#0a0a0a]`}>
+      <body className={`${lato.variable} bg-white dark:bg-brand-black`}>
         {/* ThemeProvider ensures consistent theme rendering */}
         <ThemeProvider
           attribute="class"

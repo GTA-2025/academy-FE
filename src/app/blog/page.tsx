@@ -7,12 +7,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/init-button";
 import { Calendar, Clock, Tag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Footer } from "react-day-picker";
+import Footer from "@/components/landing/footer";
+import { Input } from "@/components/ui/input";
 
 // Mock data for blog posts
 const blogPosts = [
@@ -273,18 +274,16 @@ const BlogPage = () => {
               to your inbox
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
-              />
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+             
+              <Input placeholder="Enter your email" className="w-[400px] h-[40px] " />
+              <Button className="bg-blue-600 h-[40px] hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
                 Subscribe
               </Button>
             </div>
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

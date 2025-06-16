@@ -39,23 +39,18 @@ export interface UseAuthCheckProps {
   requireAuth?: boolean;
 }
 
-
 export interface LoginFormI {
   emailOrUsername: string;
   password: string;
   isPasswordVisible?: boolean;
 }
 
-
 export interface SignUpFromI {
   firstName: string;
   lastName: string;
   password: string;
-  confirmPassword?: string
+  confirmPassword?: string;
   email: string;
   isPasswordVisible?: boolean;
-  isConfirmPasswordVisible?: boolean
+  isConfirmPasswordVisible?: boolean;
 }
-
-
-

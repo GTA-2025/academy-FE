@@ -14,7 +14,7 @@ const page = () => {
         navLinks={navLinks}
         modeToggler={<ModeToggle />}
       />
-      <div className="w-full  pt-12 lg:pt-0  sm:pt- flex flex-col items-center">
+      <div className="w-full  pt-12 lg:pt-0 sm:pt- flex flex-col items-center">
         <Index />
       </div>
     </ScreenWrapper>
