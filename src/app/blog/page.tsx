@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/landing/footer";
 import {
   Card,
   CardContent,
@@ -7,12 +8,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/init-button";
 import { Calendar, Clock, Tag } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import { Footer } from "react-day-picker";
 
 // Mock data for blog posts
 const blogPosts = [
@@ -285,6 +284,7 @@ const BlogPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

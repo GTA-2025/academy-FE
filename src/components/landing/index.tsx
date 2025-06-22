@@ -1,12 +1,12 @@
 "use client";
 import HeroSection from "@/components/landing/hero-section";
-import FeaturesSection from "@/components/landing/FeaturesSection";
-import CoursesSection from "@/components/landing/CoursesSection";
-import TestimonialsSection from "@/components/landing/TestimonialsSection";
-import CTASection from "@/components/landing/CTASection";
-import AcademyFeaturesSection from "@/components/landing/AcademyFeaturesSection";
-import DashboardSection from "@/components/landing/DashboardSection";
-import Footer from "@/components/landing/Footer";
+import FeaturesSection from "@/components/landing/features-section";
+import CoursesSection from "@/components/landing/courses-section";
+import TestimonialsSection from "@/components/landing/testimonials-section";
+import CTASection from "@/components/landing/cta-ection";
+import AcademyFeaturesSection from "@/components/landing/academy-features-section";
+import DashboardSection from "@/components/landing/dashboard-section";
+import Footer from "@/components/landing/footer";
 
 const Index = () => {
   return (

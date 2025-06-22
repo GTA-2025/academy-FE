@@ -1,26 +1,26 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Wifi, WifiOff } from 'lucide-react'
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/init-button";
+import { Wifi, WifiOff } from "lucide-react";
 
 export default function OfflinePage() {
-  const [isOnline, setIsOnline] = useState(true)
+  const [isOnline, setIsOnline] = useState(true);
 
   useEffect(() => {
-    setIsOnline(navigator.onLine)
+    setIsOnline(navigator.onLine);
 
-    const handleOnline = () => setIsOnline(true)
-    const handleOffline = () => setIsOnline(false)
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
 
-    window.addEventListener('online', handleOnline)
-    window.addEventListener('offline', handleOffline)
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
 
     return () => {
-      window.removeEventListener('online', handleOnline)
-      window.removeEventListener('offline', handleOffline)
-    }
-  }, [])
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center px-4 bg-background">
@@ -31,12 +31,12 @@ export default function OfflinePage() {
           <WifiOff className="h-12 w-12 text-red-500" />
         )}
         <h1 className="text-2xl font-bold">
-          {isOnline ? 'Back Online!' : 'You are offline'}
+          {isOnline ? "Back Online!" : "You are offline"}
         </h1>
         <p className="text-muted-foreground">
           {isOnline
-            ? 'Your connection has been restored.'
-            : 'Please check your internet connection and try again.'}
+            ? "Your connection has been restored."
+            : "Please check your internet connection and try again."}
         </p>
         <Button
           onClick={() => window.location.reload()}
@@ -46,5 +46,5 @@ export default function OfflinePage() {
         </Button>
       </div>
     </div>
-  )
+  );
 }

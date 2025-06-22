@@ -1,4 +1,12 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/home/page": "app/home/page.js",
+  "/offline/page": "app/offline/page.js",
+  "/page": "app/page.js",
+  "/auth/confirm-email/page": "app/auth/confirm-email/page.js",
+  "/auth/forgot-password/page": "app/auth/forgot-password/page.js",
+  "/auth/get-reset-token/page": "app/auth/get-reset-token/page.js",
+  "/auth/login/page": "app/auth/login/page.js",
   "/blog/page": "app/blog/page.js",
-  "/page": "app/page.js"
+  "/auth/sign-up/page": "app/auth/sign-up/page.js"
 }
