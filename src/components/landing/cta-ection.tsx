@@ -33,12 +33,12 @@ const CTASection = () => {
             <div className="flex  sm:flex-row gap-4 justify-center items-center">
               <Button
                 variant="outline"
-                className="w-full sm:w-auto border-2 py-5 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full px-6 sm:px-8  sm:py-6 text-base sm:text-lg group"
+                className="w-full sm:w-auto border-2 py-5  px-6 sm:px-8  sm:py-6 text-base sm:text-lg group"
               >
                 View Courses
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button className="w-full sm:w-auto bg-blue-600 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 rounded-full px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg group">
+              <Button className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg group">
                 Get Started
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>

@@ -2,132 +2,54 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import axiosInstance from "@/services/api";
-import { toaster } from "@/config/config";
 import logo from "../../../../public/assets/logo.jpg";
 import Image from "next/image";
 import dashboard from "../../../../public/assets/dashboard.png";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { SignUpPayloadI } from "@/types/auth";
+import { userAuthStore } from "@/store/user-auth-store";
 
 const SignUpPage = () => {
   const router = useRouter();
-  const [formData, setFormData] = useState({
+  const { useSignUp, signUpErrors, isSigningUp, clearErrors } = userAuthStore();
+
+  const [payload, setPayload] = useState<SignUpPayloadI>({
     first_name: "Muiz",
     last_name: "Oyetola",
     phone: "09041589381",
     country: "NG",
     email: "oyetolamuiz81@gmail.com",
     password: "19210042003Mn@",
-    agreeTerms: true,
-  });
-
-  const [errors, setErrors] = useState({
-    first_name: "",
-    last_name: "",
-    phone: "",
-    country: "",
-    email: "",
-    password: "",
+    agree_terms: true,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value, type, checked } = e.target;
-    setFormData(prev => ({
+    setPayload(prev => ({
       ...prev,
       [id]: type === "checkbox" ? checked : value,
     }));
-  };
-
-  const validateForm = () => {
-    const newErrors = {
-      first_name: "",
-      last_name: "",
-      phone: "",
-      country: "",
-      email: "",
-      password: "",
-    };
-    let isValid = true;
-
-    if (!formData.first_name.trim()) {
-      newErrors.first_name = "First name is required";
-      isValid = false;
+    // Clear errors when user starts typing
+    if (signUpErrors[id as keyof SignUpPayloadI]) {
+      clearErrors();
     }
-
-    if (!formData.last_name.trim()) {
-      newErrors.last_name = "Last name is required";
-      isValid = false;
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-      isValid = false;
-    }
-
-    if (!formData.country.trim()) {
-      newErrors.country = "Country is required";
-      isValid = false;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
-      isValid = false;
-    }
-
-    if (formData.password.length < 8) {
-      newErrors.password = "Password must be at least 8 characters";
-      isValid = false;
-    }
-
-    if (!formData.agreeTerms) {
-      isValid = false;
-    }
-
-    setErrors(newErrors);
-    return isValid;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateForm()) {
-      if (!formData.agreeTerms) {
-        toaster.toastE("You must agree to the Terms & Privacy");
-      }
-      return;
-    }
 
-    try {
-      const response = await axiosInstance.post("/api/auth/sign-up", {
-        first_name: formData.first_name,
-        last_name: formData.last_name,
-        phone: formData.phone,
-        country: formData.country,
-        email: formData.email,
-        password: formData.password,
-      });
-
-      if (response.data && response.data.token) {
-        toaster.toastS(
-          response.data.message || "Account created successfully!"
-        );
-        router.push("/auth/verify-email");
-      } else {
-        toaster.toastE("Signup failed: No token received");
-      }
-    } catch (error: any) {
-      toaster.toastE(
-        error.response?.data.message || "An unexpected error occurred"
-      );
+    const success = await useSignUp(payload);
+    if (success) {
+      router.push("/auth/confirm-email"); // TODO: Uncomment when ready
     }
   };
 
   return (
-    <div className="w-full md:mx-auto lg:w-full flex min-h-screen bg-white dark:bg-[#0a0a0a] justify-center items-center py-12">
-      <div className="flex max-w-[1300px] w-full rounded-xl overflow-hidden">
+    <div className="w-full md:mx-auto  lg:w-full flex min-h-screen bg-white dark:bg-[#0a0a0a] justify-center items-center py-12">
+      <div className="flex max-w-[1300px] w-full items-center justify-center rounded-xl overflow-hidden">
         {/* Left Section: Form */}
-        <div className="w-full sm:w-1/2 sm:mx-auto lg:w-1/2 md:mx-auto md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+        <div className="w-full sm:w-1/2 sm:mx-auto lg:w-1/2 md:mx-auto  p-8 md:p-12 flex flex-col justify-center">
           <div className="mb-8">
             {/* Logo */}
             <div className="flex w-full justify-center lg:justify-start items-center mb-6">
@@ -149,7 +71,7 @@ const SignUpPage = () => {
 
           {/* Form Fields */}
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="flex w-full justify-between gap-4">
+            <div className="flex w-full justify-between gap-2">
               {/* First Name */}
               <div className="w-full">
                 <label
@@ -162,10 +84,10 @@ const SignUpPage = () => {
                   type="text"
                   id="first_name"
                   className="w-full"
-                  value={formData.first_name}
+                  value={payload.first_name}
                   onChange={handleInputChange}
                   placeholder="John"
-                  error={errors.first_name}
+                  error={signUpErrors.first_name}
                 />
               </div>
 
@@ -180,10 +102,10 @@ const SignUpPage = () => {
                 <Input
                   type="text"
                   id="last_name"
-                  value={formData.last_name}
+                  value={payload.last_name}
                   onChange={handleInputChange}
                   placeholder="Doe"
-                  error={errors.last_name}
+                  error={signUpErrors.last_name}
                 />
               </div>
             </div>
@@ -199,29 +121,29 @@ const SignUpPage = () => {
               <Input
                 type="email"
                 id="email"
-                value={formData.email}
+                value={payload.email}
                 onChange={handleInputChange}
                 placeholder="john@example.com"
-                error={errors.email}
+                error={signUpErrors.email}
               />
             </div>
 
-            <div className="flex w-full justify-between gap-4">
+            <div className="flex w-full justify-between gap-2">
               {/* Phone */}
               <div className="w-full">
                 <label
                   htmlFor="phone"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
-                  Phone Number
+                  Phone
                 </label>
                 <Input
                   type="tel"
                   id="phone"
-                  value={formData.phone}
+                  value={payload.phone}
                   onChange={handleInputChange}
-                  placeholder="+234 904 158 9381"
-                  error={errors.phone}
+                  placeholder="09041589381"
+                  error={signUpErrors.phone}
                 />
               </div>
 
@@ -231,15 +153,15 @@ const SignUpPage = () => {
                   htmlFor="country"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
-                  Country Code
+                  Country
                 </label>
                 <Input
                   type="text"
                   id="country"
-                  value={formData.country}
+                  value={payload.country}
                   onChange={handleInputChange}
                   placeholder="NG"
-                  error={errors.country}
+                  error={signUpErrors.country}
                 />
               </div>
             </div>
@@ -255,25 +177,27 @@ const SignUpPage = () => {
               <Input
                 type="password"
                 id="password"
-                value={formData.password}
+                value={payload.password}
                 onChange={handleInputChange}
                 placeholder="••••••••"
-                error={errors.password}
+                error={signUpErrors.password}
               />
-              <p className="text-gray-500 text-xs mt-1">min 8 chars</p>
+              <p className="text-gray-500 text-xs mt-1">
+                Must contain uppercase, lowercase, number, and special character
+              </p>
             </div>
 
             {/* Terms & Privacy Checkbox */}
             <div className="flex items-center">
               <input
                 type="checkbox"
-                id="agreeTerms"
-                checked={formData.agreeTerms}
+                id="agree_terms"
+                checked={payload.agree_terms}
                 onChange={handleInputChange}
                 className="h-4 w-4 rounded border-gray-300 dark:border-gray-600 focus:ring-brand-primary dark:bg-black checked:bg-brand-primary checked:border-brand-primary"
               />
               <label
-                htmlFor="agreeTerms"
+                htmlFor="agree_terms"
                 className="ml-2 block text-sm text-gray-900 dark:text-gray-300"
               >
                 I agree to the{" "}
@@ -286,10 +210,11 @@ const SignUpPage = () => {
             {/* Sign Up Button */}
             <Button
               type="submit"
-              className="w-full h-[60px] py-6 text-xl font-semi-bold"
-              size="lg"
+              className="w-full h-[50px] py-6 text-xl font-semi-bold"
+              disabled={isSigningUp}
+              isLoading={isSigningUp}
             >
-              Create Account
+              {isSigningUp ? "Creating Account..." : "Create Account"}
             </Button>
           </form>
 
@@ -311,7 +236,7 @@ const SignUpPage = () => {
         </div>
 
         {/* Right Section: Informative Dashboard Preview */}
-        <div className="hidden h-[700px] lg:flex w-1/2 bg-brand-primary p-12 flex-col justify-between rounded-[1rem] relative overflow-hidden">
+        <div className="hidden h-[700px] lg:flex w-1/2 items-center bg-brand-primary p-12 flex-col justify-between rounded-[1rem] relative overflow-hidden">
           <h2 className="text-white text-4xl font-bold leading-tight mb-4">
             Start Your Trading Journey Today
           </h2>

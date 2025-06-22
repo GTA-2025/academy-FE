@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import axiosInstance from "@/services/api";
-import { toaster } from "@/config/config";
+import { toaster } from "@/lib/toaster";
 import { useRouter } from "next/navigation";
 
 interface Code {
@@ -14,8 +14,18 @@ interface Code {
   digit6: string;
 }
 
-const VerificationInput = ({ title, btnTitle, api, redirect }: { title: string; api: string; btnTitle: string, redirect: string }) => {
-  const router = useRouter()
+const VerificationInput = ({
+  title,
+  btnTitle,
+  api,
+  redirect,
+}: {
+  title: string;
+  api: string;
+  btnTitle: string;
+  redirect: string;
+}) => {
+  const router = useRouter();
   const [code, setCode] = useState<Code>({
     digit1: "",
     digit2: "",
@@ -38,7 +48,7 @@ const VerificationInput = ({ title, btnTitle, api, redirect }: { title: string; 
       });
       setCode(newCode);
 
-      const focusIndex = pastedCode.findIndex((char) => char === "") + 1;
+      const focusIndex = pastedCode.findIndex(char => char === "") + 1;
       if (focusIndex > 0 && focusIndex < 6) {
         inputRefs.current[focusIndex]?.focus();
       }
@@ -52,23 +62,34 @@ const VerificationInput = ({ title, btnTitle, api, redirect }: { title: string; 
     }
   };
 
-  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>): void => {
-    if (e.key === "Backspace" && !code[`digit${index + 1}` as keyof Code] && index > 0) {
+  const handleKeyDown = (
+    index: number,
+    e: React.KeyboardEvent<HTMLInputElement>
+  ): void => {
+    if (
+      e.key === "Backspace" &&
+      !code[`digit${index + 1}` as keyof Code] &&
+      index > 0
+    ) {
       inputRefs.current[index - 1]?.focus();
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
 
     try {
       const verificationCode = Object.values(code).join("");
-      const response = await axiosInstance.post(api, { code: verificationCode });
+      const response = await axiosInstance.post(api, {
+        code: verificationCode,
+      });
       toaster.toastS(response?.data?.message);
       if (response?.data) {
-        router.push(redirect)
+        router.push(redirect);
       }
       setIsLoading(false);
     } catch (error: any) {
@@ -78,8 +99,10 @@ const VerificationInput = ({ title, btnTitle, api, redirect }: { title: string; 
   };
 
   useEffect(() => {
-    if (Object.values(code).every((digit) => digit !== "")) {
-      const event = new Event("submit") as unknown as React.FormEvent<HTMLFormElement>;
+    if (Object.values(code).every(digit => digit !== "")) {
+      const event = new Event(
+        "submit"
+      ) as unknown as React.FormEvent<HTMLFormElement>;
       handleSubmit(event);
     }
   }, [code]);
@@ -87,7 +110,9 @@ const VerificationInput = ({ title, btnTitle, api, redirect }: { title: string; 
   return (
     <div className="fixed inset-0 flex flex-col justify-center items-center">
       <div className="max-w-md w-full  rounded-lg p-6 space-y-6">
-        <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white">{title}</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white">
+          {title}
+        </h2>
         <p className="text-gray-600 dark:text-gray-400 text-center">
           Enter the 6-digit code sent to your email address.
         </p>
@@ -101,8 +126,8 @@ const VerificationInput = ({ title, btnTitle, api, redirect }: { title: string; 
                 type="text"
                 maxLength={1}
                 value={code[key]}
-                onChange={(e) => handleChange(index, e.target.value)}
-                onKeyDown={(e) => handleKeyDown(index, e)}
+                onChange={e => handleChange(index, e.target.value)}
+                onKeyDown={e => handleKeyDown(index, e)}
                 className="w-12 h-12 text-center text-xl font-semibold border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
                 disabled={isLoading}
               />
@@ -129,4 +154,3 @@ const VerificationInput = ({ title, btnTitle, api, redirect }: { title: string; 
 };
 
 export default VerificationInput;
-

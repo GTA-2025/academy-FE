@@ -1,23 +1,12 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/onboarding/page": "app/onboarding/page.js",
-  "/page": "app/page.js",
+  "/home/page": "app/home/page.js",
   "/offline/page": "app/offline/page.js",
-  "/auth/reset-password/page": "app/auth/reset-password/page.js",
-  "/auth/sign-up/page": "app/auth/sign-up/page.js",
+  "/page": "app/page.js",
+  "/auth/confirm-email/page": "app/auth/confirm-email/page.js",
   "/auth/forgot-password/page": "app/auth/forgot-password/page.js",
+  "/auth/get-reset-token/page": "app/auth/get-reset-token/page.js",
   "/auth/login/page": "app/auth/login/page.js",
-  "/home/education/inbox/page": "app/home/education/inbox/page.js",
-  "/home/education/library/page": "app/home/education/library/page.js",
-  "/home/education/page": "app/home/education/page.js",
-  "/home/education/school/page": "app/home/education/school/page.js",
-  "/home/education/tutors/page": "app/home/education/tutors/page.js",
-  "/auth/verify-email/page": "app/auth/verify-email/page.js",
-  "/home/education/video/page": "app/home/education/video/page.js",
-  "/home/socials/create-post/page": "app/home/socials/create-post/page.js",
-  "/home/education/community/page": "app/home/education/community/page.js",
   "/blog/page": "app/blog/page.js",
-  "/home/socials/posts/page": "app/home/socials/posts/page.js",
-  "/home/settings/page": "app/home/settings/page.js",
-  "/home/socials/user/page": "app/home/socials/user/page.js"
+  "/auth/sign-up/page": "app/auth/sign-up/page.js"
 }

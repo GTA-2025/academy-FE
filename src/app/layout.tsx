@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { ToastContainer, Bounce } from "react-toastify";
 
 import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
+import { ToastContainer } from "../components/ui/toast";
 import localfont from "next/font/local";
 
 const lato = localfont({
@@ -65,19 +65,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ToastContainer
-            position="top-center"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick={false}
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="colored"
-            transition={Bounce}
-          />
+          <ToastContainer />
           <div className="  ">
             <div className=" ">{children}</div>
           </div>
